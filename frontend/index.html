@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Support Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="#home" class="brand">🎓 StudyFinder</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#admin">Agent Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="view-home" class="view">
+      <div class="hero">
+        <h1>Find & offer study support</h1>
+        <p class="tagline">Post free · Find a study supporter · Pay once to connect</p>
+      </div>
+
+      <!-- JOB SEEKER FORM -->
+      <div class="box form-box">
+        <h2>Post your profile</h2>
+        <p class="muted" style="margin-bottom: 1.5rem;">It's 100% free to post. Families pay to unlock your contact.</p>
+        
+        <form id="postForm">
+          <div class="form-group full-width">
+            <label>Full Name *</label>
+            <input name="full_name" placeholder="e.g. Abebe Kebede" required />
+          </div>
+          
+          <div class="form-group">
+            <label>Age</label>
+            <input name="age" type="number" placeholder="e.g. 22" min="14" max="80" />
+          </div>
+          <div class="form-group">
+            <label>City / Area</label>
+            <input name="city" placeholder="e.g. Addis Ababa" />
+          </div>
+
+          <div class="form-group">
+            <label>Subjects / Skills</label>
+            <input name="subjects" placeholder="e.g. Math, Physics" />
+          </div>
+          <div class="form-group">
+            <label>Grade Levels</label>
+            <input name="grade_levels" placeholder="e.g. Grade 9-12" />
+          </div>
+
+          <div class="form-group">
+            <label>Years of Experience</label>
+            <input name="experience" type="number" placeholder="e.g. 2" />
+          </div>
+          <div class="form-group">
+            <label>Rate (ETB per hour)</label>
+            <input name="rate" type="number" placeholder="e.g. 150" />
+          </div>
+
+          <div class="form-group full-width">
+            <label>Availability</label>
+            <input name="availability" placeholder="e.g. Weekends and evenings" />
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input name="phone" placeholder="e.g. 0911223344" required />
+          </div>
+
+          <div class="form-group full-width">
+            <label>Email Address</label>
+            <input name="email" placeholder="e.g. abebe@gmail.com" type="email" />
+          </div>
+
+          <div class="form-group full-width">
+            <label>About Me</label>
+            <textarea name="bio" placeholder="Write a short paragraph about your teaching style..." rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn-full">Post My Profile</button>
+        </form>
+        <div id="postResult" class="mt-4"></div>
+      </div>
+
+      <!-- FAMILY BROWSE -->
+      <div class="box">
+        <h2>Find a study supporter</h2>
+        <div class="filters">
+          <input id="fSubject" placeholder="Subject (e.g. Math)" />
+          <input id="fCity" placeholder="City" />
+          <input id="fRate" type="number" placeholder="Max Rate" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div id="list" class="cards"></div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="view-profile" class="view hidden">
+      <a href="#home" class="back">← Back to search</a>
+      <div id="profileBox" class="box"></div>
+    </section>
+
+    <!-- EDIT -->
+    <section id="view-edit" class="view hidden">
+      <a href="#home" class="back">← Home</a>
+      <h1>Edit my profile</h1>
+      <div id="editBox" class="box">Loading…</div>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="view-admin" class="view hidden">
+      <a href="#home" class="back">← Home</a>
+      <h1>Agent Login</h1>
+      <div class="box" id="adminLoginBox">
+        <div class="form-group">
+          <label>Username</label>
+          <input id="adminUser" placeholder="Enter username" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input id="adminPass" type="password" placeholder="Enter password" />
+        </div>
+        <button id="adminBtn" class="btn-full mt-4">Login</button>
+      </div>
+      <div id="adminOut" class="box hidden">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+          <h2 style="margin:0;">Admin Dashboard</h2>
+          <button id="adminLogoutBtn" class="btn-danger">Logout</button>
+        </div>
+        <div id="adminData"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
